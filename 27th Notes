@@ -1,0 +1,58 @@
+CS2324- 26th Jan, 2023
+
+Class: a means of creating new types
+Group data elements that describe some abstract concept
+These data elements can be promotove data ot other objects
+
+An object is one instance of a class
+    - Occupies a block of memory in the heap that contains the values of the data elements (not on the stack)
+    - Each instance has its own memomry
+    - The set of values stored in this memory block is called the state of the object
+    - In code, we refer to object instances using a reference to the memory block
+    
+Instance methods:
+    - Accessors: Methods used to report the state of objects
+    - Mutators: Methods used to change the state of objects
+    Syntax:- reference.method(parameters) -> "." is a member access operator
+
+Instance Methods: Speical Cases
+   1. Some specific types of instance methods:
+        - Getters: Accessor methods used to report the low-level state of objects.
+        - Setters: Mutator methods used to change the low-level state of objects. 
+   2. Mutators methods:
+        - If there are no methods that change the state of an object. These are callef immutable classes (e.g. String, Integer, Float classes)
+        - There may be many methods that change the object's state. We call these classes mutable (e.g. StringBuffer class)
+        
+A Class is a Contract:
+    1. The set of instance methods define the legal ways that an object may be accessed/changed:
+          - All operations on an object: must always leave the object in a consistent state
+                -> Enforce throigh variable visibility and through proper method definition
+          - Best practice:
+                -> On entry to a method: assume that the 
+                
+A Class as an "Encapsulator"
+    1. A class hides many details from the outside world
+    2. The user of a class only has to worry about the class' public interface
+          - Easier to understand how to use the class
+          - The implementation of the underlying class can change without the user knowing
+          
+Unified Modeling Language (UML):
+    1. UML is a spatial representation that describes:
+          - The definition of a class
+          - How  different class relate to the another
+
+Public vs Private Data
+    1. What are the pros and cons?
+          - Public pros:
+              -> Easy to access to all dat by other classes
+              -> Don't have to implement getters and setters
+          - Public cons:
+              -> Can't protect the data from other classes- easy to get into an inconsistent state
+              -> Therefore, the class cannot make any guarantees about how it behaves 
+              
+Instance vs Class Data
+     1. Each data gets its own copy of instance data
+     2. All objects in a class share one copy of class data
+          - In UML, class variables are underlined
+          - In the class definition, class variables are declared as static
+
